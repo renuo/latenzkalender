@@ -3,7 +3,6 @@ GEM
   specs:
     ast (2.4.2)
     json (2.6.2)
-    multi_json (1.15.0)
     mustermann (3.0.0)
       ruby2_keywords (~> 0.0.1)
     nio4r (2.5.8)
@@ -13,8 +12,6 @@ GEM
     puma (6.0.0)
       nio4r (~> 2.0)
     rack (2.2.4)
-    rack-livereload (0.3.17)
-      rack
     rack-protection (3.0.3)
       rack
     rainbow (3.1.1)
@@ -42,12 +39,6 @@ GEM
       rack (~> 2.2, >= 2.2.4)
       rack-protection (= 3.0.3)
       tilt (~> 2.0)
-    sinatra-contrib (3.0.3)
-      multi_json
-      mustermann (~> 3.0)
-      rack-protection (= 3.0.3)
-      sinatra (= 3.0.3)
-      tilt (~> 2.0)
     standard (1.18.0)
       rubocop (= 1.39.0)
       rubocop-performance (= 1.15.0)
@@ -56,12 +47,11 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   puma
-  rack-livereload
   sinatra
-  sinatra-contrib
   standard
 
 RUBY VERSION
