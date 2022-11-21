@@ -1,0 +1,47 @@
+<html lang="de">
+<head>
+  <title>Latenzkalender</title>
+  <style>
+      .calendar {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-template-rows: repeat(4, 1fr);
+          grid-gap: 5px;
+      }
+
+      .calendar > .field {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          border: 1px solid black;
+          text-align: center;
+          padding: 5px;
+
+          aspect-ratio: 1 / 1;
+          font-size: 5vw;
+      }
+
+      .door-open {
+          background-color: #d2b6b6;
+      }
+
+      .door-closed {
+          background-color: #b1c7b1;
+      }
+
+      #measureTarget {
+          font-size: 50%;
+      }
+
+      button {
+        font-size: 5vw;
+      }
+  </style>
+</head>
+<body>
+  <h1>Latenzkalender</h1>
+  <%= yield %>
+</body>
+</html>

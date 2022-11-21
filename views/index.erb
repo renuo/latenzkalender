@@ -1,0 +1,35 @@
+<script>
+  function measure() {
+      const startTime = performance.now();
+      fetch('open', {
+          method: 'POST',
+          body: new URLSearchParams({})
+      }).then(() => {
+          const endTime = performance.now();
+          document.getElementById('measureTarget').innerText = (endTime - startTime).toFixed(2) + 'ms';
+      });
+  }
+</script>
+
+<div class="calendar">
+  <% (1..24).to_a.shuffle(random: Random.new(0)).each do |day| %>
+    <% if day < today_day %>
+      <div class="field door-open">
+        <%= day %>
+      </div>
+    <% end %>
+
+    <% if day == today_day %>
+      <div class="field">
+        <button onClick="measure(this)">
+          <%= day %>
+        </button>
+        <span id="measureTarget"></span>
+      </div>
+    <% end %>
+
+    <% if day > today_day %>
+      <div class="field door-closed"><%= day %></div>
+    <% end %>
+  <% end %>
+</div>
